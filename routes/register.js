@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
@@ -35,12 +38,16 @@ router.post("/register", (req, res) => {
     });
   }
 
-  users.push({
-    email,
-    password,
-  });
+  bcrypt.genSalt(saltRounds, function (err, salt) {
+    bcrypt.hash(password, salt, function (err, hash) {
+      users.push({
+        email,
+        password: hash,
+      });
 
-  return res.status(201).json({ message: "User created successfully! 🎉" });
+      return res.status(201).json({ message: "User created successfully! 🎉" });
+    });
+  });
 });
 
 module.exports = router;
