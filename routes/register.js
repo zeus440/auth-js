@@ -16,8 +16,6 @@ router.post("/register", (req, res) => {
     return res.status(400).json({ error: "Email has been registred." });
   }
 
-  res.json(req.body);
-
   users.push({
     email,
     password,
