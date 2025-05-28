@@ -7,11 +7,13 @@ const client = new MongoClient(uri);
 
 let database;
 let collection;
+let auditlogcollection;
 
 async function connectToDatabase() {
   try {
     database = client.db("auth_db");
     collection = database.collection("users");
+    auditlogcollection = database.collection("auditlogs");
 
     console.log("✅ MongoDB connected!");
   } catch (err) {
@@ -20,7 +22,7 @@ async function connectToDatabase() {
 }
 
 function getDataBase() {
-  return { database, collection };
+  return { database, collection, auditlogcollection };
 }
 
 module.exports = { connectToDatabase, getDataBase };

@@ -8,7 +8,7 @@ require("dotenv").config();
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
   const { getDataBase } = require("../database/db");
   const { collection } = getDataBase();
 
@@ -19,6 +19,10 @@ router.post("/login", async (req, res) => {
   }
 
   const user = await collection.findOne({ email });
+
+  if (!user.isVerified) {
+    return res.status(400).json({ error: "Verify your email first!" });
+  }
 
   if (user) {
     bcrypt.compare(password, user.password, async function (err, result) {
