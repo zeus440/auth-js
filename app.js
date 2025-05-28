@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const login = require('./routes/login')
-const register = require('./routes/register')
+const login = require("./routes/login");
+const register = require("./routes/register");
+const { connectToDatabase } = require("./database/db");
 
-app.use(login)
-app.use(register)
+app.use(login);
+app.use(register);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+connectToDatabase().then(() => {
+  app.listen(port, () => {
+    console.log(`🚀 Server running on http://localhost:${port}`);
+  });
 });
