@@ -11,8 +11,10 @@ const {
   loginLimiter,
   registerLimiter,
 } = require("./middlewares/rateLimit.middleware");
+const auditLoggerInterceptResponse = require("./middlewares/audit-log.middleware");
 
 app.use(helmet());
+app.use(auditLoggerInterceptResponse);
 app.use("/login", loginLimiter, login);
 app.use("/register", registerLimiter, register);
 app.use(profile);
