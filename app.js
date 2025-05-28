@@ -6,6 +6,7 @@ const port = 3000;
 const login = require("./routes/login");
 const register = require("./routes/register");
 const profile = require("./routes/profile");
+const verifyEmail = require("./routes/verify-email");
 const { connectToDatabase } = require("./database/db");
 const {
   loginLimiter,
@@ -17,6 +18,7 @@ app.use(helmet());
 app.use(auditLoggerInterceptResponse);
 app.use("/login", loginLimiter, login);
 app.use("/register", registerLimiter, register);
+app.use("/verify-email", verifyEmail);
 app.use(profile);
 
 connectToDatabase().then(() => {
