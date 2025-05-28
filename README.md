@@ -1,4 +1,4 @@
-# 🔐 Secure Authentication System with Node.js
+# 🔐 AuthJS - Secure Authentication System 
 
 ## 📝 Description
 
