@@ -20,6 +20,10 @@ router.post("/", async (req, res) => {
 
   const user = await collection.findOne({ email });
 
+  if (!user.isVerified) {
+    return res.status(400).json({ error: "Verify your email first!" });
+  }
+
   if (user) {
     bcrypt.compare(password, user.password, async function (err, result) {
       if (result) {
