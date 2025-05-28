@@ -8,7 +8,7 @@ require("dotenv").config();
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
   const { getDataBase } = require("../database/db");
   const { collection } = getDataBase();
 

@@ -7,7 +7,7 @@ const saltRounds = 10;
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-router.post("/register", async (req, res) => {
+router.post("/", async (req, res) => {
   const { email, password } = req.body;
 
   const { getDataBase } = require("../database/db");
