@@ -1,9 +1,8 @@
-# 🔐 AuthJS - Secure Authentication System 
+# 🔐 AuthJS - Secure Authentication System
 
 ## 📝 Description
 
-This project is a user login and registration system focused on secure authentication.
-User passwords are hashed using bcrypt, and JSON Web Tokens (JWT) are used to manage session authentication.
+**AuthJS** is a robust authentication system built with Node.js, focused on security, modularity, and real-world best practices. It handles user registration, login, token-based session authentication, and email verification.
 
 ## ⚙️ Technologies Used
 
@@ -13,19 +12,29 @@ User passwords are hashed using bcrypt, and JSON Web Tokens (JWT) are used to ma
 - dotenv – Environment variable management
 - MongoDB – NoSQL database
 - helmet.js – Enhances security via HTTP headers
+- nodemailer – Email verification service
 
-## 🔐 Security-Focused Features
+## 🚀 Features
 
 ### ✅ User Registration
 
-- Users submit an email and password
-- The password is hashed with bcrypt before being stored in the database
+- Email and password submission
+- Passwords are hashed with `bcrypt` before storage
+- Automatically generates a unique email verification token
+- Sends verification email to the user via `nodemailer`
+
+### 📧 Email Verification
+
+- On registration, user receives a verification email
+- The email contains a secure token link
+- User must click the link to activate their account
+- Only verified users can log in
 
 ### 🔑 Login
 
-- Users provide their login credentials
-- The system compares the submitted password hash with the stored hash
-- If valid, a signed JWT is generated and returned to the user
+- Secure password comparison using bcrypt
+- Only verified accounts are allowed to log in
+- Upon success, a JWT is generated and returned
 
 ### 🔒 Protected Routes
 
@@ -34,6 +43,11 @@ User passwords are hashed using bcrypt, and JSON Web Tokens (JWT) are used to ma
 
 ### 🛡️ Hardening Measures
 
-- IP blocking after multiple failed login attempts
-- Rate limiting to prevent brute-force attacks
-- Helmet.js to secure HTTP headers against common vulnerabilities
+- Helmet.js for secure HTTP headers
+- Rate Limiting to prevent brute-force login attempts
+- IP Blocking after multiple failed login attempts (configurable)
+- Strict field validation to avoid injection or malformed payloads
+
+## 📄 License
+
+This project is open-source under the MIT license.
