@@ -19,8 +19,8 @@ async function connectToDatabase() {
   }
 }
 
-function getDatabase() {
+function getDataBase() {
   return { database, collection };
 }
 
-module.exports = { connectToDatabase, getDatabase };
+module.exports = { connectToDatabase, getDataBase };
