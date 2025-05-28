@@ -7,16 +7,18 @@ const saltRounds = 10;
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-const users = [];
-
-router.post("/register", (req, res) => {
+router.post("/register", async (req, res) => {
   const { email, password } = req.body;
+
+  const { getDataBase } = require("../database/db");
+  const { collection } = getDataBase();
 
   if (!email || !password) {
     return res.status(400).json({ error: "Email and password are required." });
   }
 
-  const emailAlreadyExists = users.some((user) => user.email === email);
+  const query = { email };
+  const emailAlreadyExists = await collection.findOne(query);
 
   if (emailAlreadyExists) {
     return res.status(400).json({ error: "Email has been registred." });
@@ -39,11 +41,10 @@ router.post("/register", (req, res) => {
   }
 
   bcrypt.genSalt(saltRounds, function (err, salt) {
-    bcrypt.hash(password, salt, function (err, hash) {
-      users.push({
-        email,
-        password: hash,
-      });
+    bcrypt.hash(password, salt, async function (err, hash) {
+      const user = { email, password: hash };
+
+      await collection.insertOne(user);
 
       return res.status(201).json({ message: "User created successfully! 🎉" });
     });
