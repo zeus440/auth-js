@@ -5,11 +5,13 @@ const port = 3000;
 
 const login = require("./routes/login");
 const register = require("./routes/register");
+const profile = require("./routes/profile")
 const { connectToDatabase } = require("./database/db");
 
 app.use(helmet())
 app.use(login);
 app.use(register);
+app.use(profile)
 
 connectToDatabase().then(() => {
   app.listen(port, () => {
